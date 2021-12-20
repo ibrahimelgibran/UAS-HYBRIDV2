@@ -1,0 +1,19 @@
+.movie-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img {
+    aspect-ratio: 9/16;
+    height: 200px;
+  }
+}
+.release {
+  margin: 0.2rem 0;
+  color: #444;
+}
+p.ion-no-margin {
+  ion-icon {
+    // display: inline-block;
+    margin-bottom: -0.1rem;
+  }
+}

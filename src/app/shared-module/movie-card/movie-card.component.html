@@ -1,0 +1,52 @@
+<div class="movie-card">
+  <ion-img
+    class="img"
+    src="{{
+      movie.poster_path
+        ? 'https://image.tmdb.org/t/p/original' + movie.poster_path
+        : 'https://via.placeholder.com/90x150/eee?text=No Image'
+    }}"
+    [routerLink]="['/film', movie.id]"
+  ></ion-img>
+  <section class="details ion-padding-start">
+    <h1 class="ion-no-margin" [routerLink]="['/film', movie.id]">
+      {{ movie.title }}
+    </h1>
+    <p class="release">{{ movie.release_date | date }}</p>
+    <p class="ion-no-margin">
+      {{ movie.vote_average }}
+      <ion-icon name="star"></ion-icon>
+    </p>
+    <section>
+      <ion-button
+        fill="{{ isWatched ? 'solid' : 'outline' }}"
+        title="Add to Watched Movies"
+        (click)="addToWatchedMovies(movie)"
+      >
+        <ion-icon name="add-circle-outline"></ion-icon>
+      </ion-button>
+      <ion-button
+        fill="{{ isFavorite ? 'solid' : 'outline' }}"
+        color="danger"
+        title="Add to Favorites"
+        (click)="addToFavoriteMovies(movie)"
+      >
+        <ion-icon name="heart-outline"></ion-icon>
+      </ion-button>
+      <ion-button
+        fill="{{ isWatchlist ? 'solid' : 'outline' }}"
+        color="danger"
+        title="Add to Watchlist"
+        (click)="addToWatchlist(movie)"
+      >
+        <ion-icon name="bookmark-outline"></ion-icon>
+      </ion-button>
+    </section>
+  </section>
+</div>
+
+<!-- 
+  add to favorites
+  add to watchlist
+  add to seen
+ -->

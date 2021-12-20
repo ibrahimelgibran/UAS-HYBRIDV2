@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-searchbar
+      #search
+      (ionChange)="searchMovie($event.target.value)"
+      debounce="500"
+      showCancelButton="focus"
+      placeholder="Search Movies"
+    ></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="searchResult$ | async as movies">
+    <ion-item
+      *ngFor="let movie of movies.results"
+      [routerLink]="['/film', movie.id]"
+      routerLinkActive="router-link-active"
+    >
+      <app-movie-card [movie]="movie"></app-movie-card>
+    </ion-item>
+  </ion-list>
+</ion-content>

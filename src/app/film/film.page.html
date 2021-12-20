@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ movie ? movie.title : 'Loading Film...' }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="movie">
+  <ion-img
+    [src]="'https://image.tmdb.org/t/p/original' + movie.backdrop_path"
+  ></ion-img>
+
+  <main class="ion-padding-horizontal">
+    <section class="header">
+      <p><i>{{movie.tagline}}</i></p>
+      <h1>{{movie.title}}</h1>
+      <p *ngIf="movie.original_title !== movie.title">
+        {{movie.original_title}}
+      </p>
+      <p>{{movie.release_date | date}}</p>
+      <span class="rating">
+        <ion-icon *ngFor="let star of stars" [name]="star"></ion-icon>
+        {{ movie.vote_average / 2 }}
+      </span>
+    </section>
+
+    <section>
+      <p>{{movie.overview}}</p>
+    </section>
+
+    <section>
+      <ion-chip *ngFor="let genre of movie.genres">
+        <ion-label>{{genre.name}}</ion-label>
+      </ion-chip>
+    </section>
+
+    <section class="action">
+      <ion-button
+        fill="{{ isWatched ? 'solid' : 'outline' }}"
+        color="dark"
+        (click)="addToWatchedMovies(movie)"
+      >
+        <ion-icon slot="start" name="eye-outline"></ion-icon>
+        Add to Watched Movies
+      </ion-button>
+      <ion-button
+        fill="{{ isFavorite ? 'solid' : 'outline' }}"
+        color="dark"
+        (click)="addToFavoriteMovies(movie)"
+      >
+        <ion-icon slot="start" name="heart-outline"></ion-icon>
+        Add to Favorites
+      </ion-button>
+      <ion-button
+        fill="{{ isWatchlist ? 'solid' : 'outline' }}"
+        color="dark"
+        (click)="addToWatchlist(movie)"
+      >
+        <ion-icon slot="start" name="list-outline"></ion-icon>
+        Add to Watchlist
+      </ion-button>
+    </section>
+  </main>
+</ion-content>
+
+<!-- 
+    vote_average: number,
+    id: number,
+    original_language: string,
+    original_title: string,
+    genre_ids: number[]
+    vote_count: number
+    video: boolean
+  -->
