@@ -8,6 +8,7 @@ import { TmdbService } from '../services/tmdb.service';
 })
 export class MoviesPage {
   movies$ = this.tmdbService.movies$;
+  isOffline = !navigator.onLine;
 
   constructor(public tmdbService: TmdbService) {}
 

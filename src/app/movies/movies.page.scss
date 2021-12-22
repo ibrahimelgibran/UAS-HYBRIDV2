@@ -1,0 +1,12 @@
+.error-message-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  p {
+    color: #ff484890;
+    text-align: center;
+    margin: 0;
+  }
+}

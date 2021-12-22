@@ -25,10 +25,13 @@ export class TmdbService {
         .get(
           `https://api.themoviedb.org/3/trending/movie/day?api_key=${this.key}&language=en-US&page=${this.currentPage}&include_adult=true`
         )
-        .subscribe((data: any) => {
-          this.movies = [...this.movies, ...data.results];
-          this.movies$.next(this.movies);
-        });
+        .subscribe(
+          (data: any) => {
+            this.movies = [...this.movies, ...data.results];
+            this.movies$.next(this.movies);
+          },
+          () => this.movies$.next([])
+        );
     }
   }
 
