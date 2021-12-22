@@ -6,11 +6,15 @@
       debounce="500"
       showCancelButton="focus"
       placeholder="Search Movies"
+      [disabled]="isOffline"
     ></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <p *ngIf="isOffline" class="ion-text-center">
+    Please Check Your Internet Connection.
+  </p>
   <ion-list *ngIf="searchResult$ | async as movies">
     <ion-item
       *ngFor="let movie of movies.results"

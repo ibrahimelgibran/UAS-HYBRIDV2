@@ -8,6 +8,7 @@ import { TmdbService } from '../services/tmdb.service';
 })
 export class SearchPage {
   public searchResult$: Observable<any>;
+  isOffline = !navigator.onLine;
 
   constructor(private tmdbService: TmdbService) {}
 
