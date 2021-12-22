@@ -45,7 +45,7 @@
         (click)="addToWatchedMovies(movie)"
       >
         <ion-icon slot="start" name="eye-outline"></ion-icon>
-        Add to Watched Movies
+        {{ isWatched ? 'Remove from Watched Movies' : 'Add to Watched Movies' }}
       </ion-button>
       <ion-button
         fill="{{ isFavorite ? 'solid' : 'outline' }}"
@@ -53,7 +53,8 @@
         (click)="addToFavoriteMovies(movie)"
       >
         <ion-icon slot="start" name="heart-outline"></ion-icon>
-        Add to Favorites
+        {{ isFavorite ? 'Remove from Favorite Movies' : 'Add to Favorite Movies'
+        }}
       </ion-button>
       <ion-button
         fill="{{ isWatchlist ? 'solid' : 'outline' }}"
@@ -61,18 +62,8 @@
         (click)="addToWatchlist(movie)"
       >
         <ion-icon slot="start" name="list-outline"></ion-icon>
-        Add to Watchlist
+        {{ isWatchlist ? 'Remove from Watchlist' : 'Add to Watchlist' }}
       </ion-button>
     </section>
   </main>
 </ion-content>
-
-<!-- 
-    vote_average: number,
-    id: number,
-    original_language: string,
-    original_title: string,
-    genre_ids: number[]
-    vote_count: number
-    video: boolean
-  -->
