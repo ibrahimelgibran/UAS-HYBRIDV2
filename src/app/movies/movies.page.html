@@ -4,8 +4,12 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list *ngIf="movies$ | async as movies">
+<ion-content *ngIf="movies$ | async as movies">
+  <div *ngIf="!movies.length" class="error-message-container">
+    <p *ngIf="!isOffline">An error occurred. Please try again later.</p>
+    <p *ngIf="isOffline">Please Check Your Internet Connection.</p>
+  </div>
+  <ion-list *ngIf="movies.length">
     <ion-item *ngFor="let movie of movies">
       <app-movie-card [movie]="movie"></app-movie-card>
     </ion-item>
