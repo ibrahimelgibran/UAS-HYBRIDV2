@@ -33,7 +33,7 @@
     </section>
 
     <section>
-      <ion-chip *ngFor="let genre of movie.genres">
+      <ion-chip color="light" *ngFor="let genre of movie.genres">
         <ion-label>{{genre.name}}</ion-label>
       </ion-chip>
     </section>
@@ -41,7 +41,7 @@
     <section class="action">
       <ion-button
         fill="{{ isWatched ? 'solid' : 'outline' }}"
-        color="dark"
+        color="light"
         (click)="addToWatchedMovies(movie)"
       >
         <ion-icon slot="start" name="eye-outline"></ion-icon>
@@ -49,7 +49,7 @@
       </ion-button>
       <ion-button
         fill="{{ isFavorite ? 'solid' : 'outline' }}"
-        color="dark"
+        color="light"
         (click)="addToFavoriteMovies(movie)"
       >
         <ion-icon slot="start" name="heart-outline"></ion-icon>
@@ -58,7 +58,7 @@
       </ion-button>
       <ion-button
         fill="{{ isWatchlist ? 'solid' : 'outline' }}"
-        color="dark"
+        color="light"
         (click)="addToWatchlist(movie)"
       >
         <ion-icon slot="start" name="list-outline"></ion-icon>

@@ -9,28 +9,44 @@
     *ngIf="{watched: watched$ | async, favorite: favorite$ | async, wl: watchlist$ | async} as data"
   >
     <ion-item routerLink="./watched">
-      <ion-icon name="eye-outline" class="decoration"></ion-icon>
+      <ion-icon color="light" name="eye-outline" class="decoration"></ion-icon>
       <ion-label class="ion-margin-horizontal">
         <h1>Watched Movies</h1>
         <p>{{data.watched.length}} Films</p>
       </ion-label>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
+      <ion-icon
+        *ngIf="!platform.is('ios')"
+        color="medium"
+        name="arrow-forward-outline"
+      ></ion-icon>
     </ion-item>
     <ion-item routerLink="./favorite">
-      <ion-icon name="heart-outline" class="decoration"></ion-icon>
+      <ion-icon
+        color="light"
+        name="heart-outline"
+        class="decoration"
+      ></ion-icon>
       <ion-label class="ion-margin-horizontal">
         <h1>Favorite Movies</h1>
         <p>{{data.favorite.length}} Films</p>
       </ion-label>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
+      <ion-icon
+        *ngIf="!platform.is('ios')"
+        color="medium"
+        name="arrow-forward-outline"
+      ></ion-icon>
     </ion-item>
     <ion-item routerLink="./watchlist">
-      <ion-icon name="list-outline" class="decoration"></ion-icon>
+      <ion-icon color="light" name="list-outline" class="decoration"></ion-icon>
       <ion-label class="ion-margin-horizontal">
         <h1>My Watchlist</h1>
         <p>{{data.wl.length}} Films</p>
       </ion-label>
-      <ion-icon name="arrow-forward-outline"></ion-icon>
+      <ion-icon
+        *ngIf="!platform.is('ios')"
+        color="medium"
+        name="arrow-forward-outline"
+      ></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>

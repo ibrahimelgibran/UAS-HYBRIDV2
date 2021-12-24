@@ -11,6 +11,13 @@ export class ToastService {
     const toast = await this.toastController.create({
       message,
       duration,
+      color: 'dark',
+      buttons: [
+        {
+          icon: 'close',
+          role: 'cancel',
+        },
+      ],
     });
     toast.present();
   }
