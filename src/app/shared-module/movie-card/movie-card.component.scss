@@ -6,14 +6,17 @@
     aspect-ratio: 9/16;
     height: 200px;
   }
+  h1 {
+    cursor: pointer;
+    font-size: clamp(24px, 2.5vw, 44px);
+  }
 }
 .release {
   margin: 0.2rem 0;
-  color: #444;
+  opacity: 0.7;
 }
 p.ion-no-margin {
   ion-icon {
-    // display: inline-block;
     margin-bottom: -0.1rem;
   }
 }

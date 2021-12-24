@@ -19,27 +19,34 @@
     </p>
     <section>
       <ion-button
-        fill="{{ isWatched ? 'solid' : 'outline' }}"
+        fill="outline"
         title="Add to Watched Movies"
         (click)="addToWatchedMovies(movie)"
+        color="{{ isWatched ? 'danger' : 'medium' }}"
       >
-        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-icon
+          name="{{ isWatched ? 'add-circle' : 'add-circle-outline' }}"
+        ></ion-icon>
       </ion-button>
       <ion-button
-        fill="{{ isFavorite ? 'solid' : 'outline' }}"
-        color="danger"
+        fill="outline"
         title="Add to Favorites"
         (click)="addToFavoriteMovies(movie)"
+        color="{{ isFavorite ? 'danger' : 'medium' }}"
       >
-        <ion-icon name="heart-outline"></ion-icon>
+        <ion-icon
+          name="{{ isFavorite ? 'heart' : 'heart-outline' }}"
+        ></ion-icon>
       </ion-button>
       <ion-button
-        fill="{{ isWatchlist ? 'solid' : 'outline' }}"
-        color="dark"
+        fill="outline"
         title="Add to Watchlist"
         (click)="addToWatchlist(movie)"
+        color="{{ isWatchlist ? 'danger' : 'medium' }}"
       >
-        <ion-icon name="bookmark-outline"></ion-icon>
+        <ion-icon
+          name="{{ isWatchlist ? 'bookmark' : 'bookmark-outline' }}"
+        ></ion-icon>
       </ion-button>
     </section>
   </section>
