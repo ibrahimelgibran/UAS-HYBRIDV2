@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
 import { ProfileService } from '../services/profile.service';
 
 @Component({
@@ -11,5 +12,8 @@ export class ProfilePage {
   favorite$ = this.profileService.favoriteMovies$;
   watchlist$ = this.profileService.watchlist$;
 
-  constructor(private profileService: ProfileService) {}
+  constructor(
+    private profileService: ProfileService,
+    public platform: Platform
+  ) {}
 }
