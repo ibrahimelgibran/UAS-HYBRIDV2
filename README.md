@@ -26,14 +26,3 @@ This app is built with **Ionic** and **Angular**.
   <img src="./assets/details.png" alt="Details Page" width="200" />
   <img src="./assets/profile.png" alt="Profile Page" width="200" />
 </div>
-
-<style>
-  .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 10px;
-  }
-  .container img {
-    max-width: 100%;
-  }
-</style>
