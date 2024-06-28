@@ -11,10 +11,6 @@ export class NotesPage {
 
   constructor(private profileService: ProfileService, private router: Router) {}
 
-  goBack() {
-    history.back();
-  }
-
   addNote() {
     // contoh: Buat objek catatan baru
     const newNote = {
@@ -26,5 +22,9 @@ export class NotesPage {
 
     this.profileService.addToNotes(newNote); // Panggil fungsi dari service untuk menambah catatan
     this.router.navigateByUrl('/notes'); // Redirect kembali ke halaman Notes setelah menambah catatan
+  }
+
+  goBack() {
+    history.back();
   }
 }
