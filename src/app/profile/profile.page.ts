@@ -11,6 +11,7 @@ export class ProfilePage {
   watched$ = this.profileService.watchedMovies$;
   favorite$ = this.profileService.favoriteMovies$;
   watchlist$ = this.profileService.watchlist$;
+  notes$ = this.profileService.notes$; // Ensure `notes$` is imported correctly and accessible
 
   constructor(
     private profileService: ProfileService,

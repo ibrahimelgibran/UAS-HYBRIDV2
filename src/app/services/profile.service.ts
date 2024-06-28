@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { ToastService } from './toast.service';
 
 @Injectable({
@@ -15,6 +15,9 @@ export class ProfileService {
   public watchlist$ = new BehaviorSubject(
     JSON.parse(localStorage.getItem('watchlist')) || []
   );
+  public notes$ = new BehaviorSubject(
+    JSON.parse(localStorage.getItem('notes')) || []
+  );
 
   constructor(private toastService: ToastService) {}
 
@@ -22,7 +25,6 @@ export class ProfileService {
     if (localStorage.getItem('watchedMovies')) {
       const watchedMovies = JSON.parse(localStorage.getItem('watchedMovies'));
       if (watchedMovies.find((m) => m.id === movie.id)) {
-        // todo: delete item quietly
         watchedMovies.splice(
           watchedMovies.findIndex((m) => m.id === movie.id),
           1
@@ -119,5 +121,21 @@ export class ProfileService {
       const watchlist = JSON.parse(localStorage.getItem('watchlist'));
       return watchlist.some((m) => m.id === movie.id);
     }
+  }
+
+  addToNotes(note) {
+    // let notes = this.notes$.getValue();
+    // notes.push(note);
+    // localStorage.setItem('notes', JSON.stringify(notes));
+    // this.notes$.next(notes);
+    // this.toastService.showToast(`Note added: ${note.title}`);
+  }
+
+  removeNote(noteId: number) {
+    // let notes = this.notes$.getValue();
+    // notes = notes.filter((note) => note.id !== noteId);
+    // localStorage.setItem('notes', JSON.stringify(notes));
+    // this.notes$.next(notes);
+    // this.toastService.showToast(`Note removed`);
   }
 }

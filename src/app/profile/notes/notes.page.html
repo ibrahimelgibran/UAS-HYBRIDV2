@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Notes</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="./add">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- Daftar catatan -->
+    <ion-item *ngFor="let note of notes$ | async">
+      <app-note-card [note]="note"></app-note-card>
+    </ion-item>
+  </ion-list>
+
+  <!-- Formulir untuk menambahkan catatan baru -->
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input type="text" [(ngModel)]="newNote.title"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Content</ion-label>
+    <ion-textarea rows="1" [(ngModel)]="newNote.content"></ion-textarea>
+  </ion-item>
+  <ion-button expand="block" (click)="addNote()">Save Note</ion-button>
+</ion-content>
