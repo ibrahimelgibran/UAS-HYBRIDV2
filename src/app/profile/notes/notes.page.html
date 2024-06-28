@@ -16,13 +16,13 @@
 
 <ion-content>
   <ion-list>
-    <!-- Daftar catatan -->
+    <!-- daftar catatan -->
     <ion-item *ngFor="let note of notes$ | async">
       <app-note-card [note]="note"></app-note-card>
     </ion-item>
   </ion-list>
 
-  <!-- Formulir untuk menambahkan catatan baru -->
+  <!-- formulir untuk menambahkan catatan baru -->
   <ion-item>
     <ion-label position="stacked">Title</ion-label>
     <ion-input type="text" [(ngModel)]="newNote.title"></ion-input>

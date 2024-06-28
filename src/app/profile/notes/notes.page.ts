@@ -16,7 +16,7 @@ export class NotesPage {
   }
 
   addNote() {
-    // Contoh: Buat objek catatan baru
+    // contoh: Buat objek catatan baru
     const newNote = {
       id: Math.floor(Math.random() * 1000), // Contoh: Pembuatan ID sementara
       title: 'New Note', // Gantilah dengan judul sesuai input pengguna
