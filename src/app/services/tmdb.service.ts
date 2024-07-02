@@ -8,7 +8,7 @@ import { BehaviorSubject } from 'rxjs';
 export class TmdbService {
   public movies$ = new BehaviorSubject([]);
 
-  private key = '1426684c151e5ca03cfd5a6952e73c46';
+  private key = 'fbdda92469daa47c44106d6f62c6242d';
   private movies = [];
   private currentPage = 0;
 
