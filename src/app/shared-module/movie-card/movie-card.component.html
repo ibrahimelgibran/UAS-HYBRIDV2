@@ -22,7 +22,7 @@
         fill="outline"
         title="Add to Watched Movies"
         (click)="addToWatchedMovies(movie)"
-        color="{{ isWatched ? 'danger' : 'medium' }}"
+        color="{{ isWatched ? 'warning' : 'medium' }}"
       >
         <ion-icon
           name="{{ isWatched ? 'add-circle' : 'add-circle-outline' }}"
@@ -32,7 +32,7 @@
         fill="outline"
         title="Add to Favorites"
         (click)="addToFavoriteMovies(movie)"
-        color="{{ isFavorite ? 'danger' : 'medium' }}"
+        color="{{ isFavorite ? 'warning' : 'medium' }}"
       >
         <ion-icon
           name="{{ isFavorite ? 'heart' : 'heart-outline' }}"
@@ -42,7 +42,7 @@
         fill="outline"
         title="Add to Watchlist"
         (click)="addToWatchlist(movie)"
-        color="{{ isWatchlist ? 'danger' : 'medium' }}"
+        color="{{ isWatchlist ? 'warning' : 'medium' }}"
       >
         <ion-icon
           name="{{ isWatchlist ? 'bookmark' : 'bookmark-outline' }}"
