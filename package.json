@@ -1,8 +1,8 @@
 {
-  "name": "movie-app",
+  "name": "movie-apps",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Ibrahim El Gibran",
+  "homepage": "https://sotobabat.vercel.app/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

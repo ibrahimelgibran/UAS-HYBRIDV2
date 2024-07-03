@@ -1,4 +1,4 @@
-# Ionic Movie Diary App
+# Ionic Movie Diary with Notes Simple App
 
 This app is built with **Ionic** and **Angular**.
 
