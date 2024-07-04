@@ -1,6 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
+      <!-- Tombol untuk kembali ke halaman sebelumnya -->
       <ion-button (click)="goBack()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
@@ -11,7 +12,9 @@
 
 <ion-content>
   <ion-list>
+    <!-- Mengiterasi observables favoriteMovies$ dan menampilkan setiap film -->
     <ion-item *ngFor="let movie of favoriteMovies$ | async">
+      <!-- Menggunakan komponen app-movie-card untuk menampilkan detail film -->
       <app-movie-card [movie]="movie"></app-movie-card>
     </ion-item>
   </ion-list>
