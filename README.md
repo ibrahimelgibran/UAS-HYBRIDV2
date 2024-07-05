@@ -18,7 +18,7 @@ This app is built with **Ionic** and **Angular**.
   - Shows the movie's release date.
   - Shows the movie's rating.
 
-## Screenshots
+## Screenshotss
 
 <div class="container">
   <img src="./assets/home.png" alt="Home Page" width="200" />
